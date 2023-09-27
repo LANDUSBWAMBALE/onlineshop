@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onlineapp/profile.dart';
 
 class Loginpage extends StatelessWidget {
   const Loginpage({super.key});
@@ -10,10 +11,18 @@ class Loginpage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FlutterLogo(size: 60),
-            SizedBox(height: 15,),
-            OutlinedButton.icon(onPressed: (){}, icon: Icon(Icons.login), label: Text("Login")),
+            //adding image
+            Image.asset("images/logo.png" ,height: 100,width: 100,),
+            OutlinedButton.icon(onPressed: (){
+              //navigating to the next page
+              Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                return profilepage();
+              }),);
+            }, 
+            //login icon
+            icon: Icon(Icons.login), label: Text("Login")),
             SizedBox(height: 20,),
+            //adding text
             TextButton(onPressed: (){}, child: Text("Create Account"),)
           ],
         ),
